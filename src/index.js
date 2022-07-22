@@ -13,7 +13,7 @@ window.renderApp1 = (containerId, history) => {
     root = ReactDOM.createRoot(
       containerId
         ? document.getElementById(containerId)
-        : document.getElementById("root")
+        : document.getElementById("root_app1")
     );
     loaded = true;
   }
@@ -25,3 +25,7 @@ window.renderApp1 = (containerId, history) => {
 window.unmountApp1 = (containerId) => {
   ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
 };
+
+if (!document.getElementById("root")) {
+  window.renderApp1("root_app1", window.history);
+}
