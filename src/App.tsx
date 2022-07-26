@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { Observable } from "windowed-observable";
+import { MyComponent, MyCard } from "@ready-set-go-design/rsg-mfe-package-ts";
 
 interface ObservableMessage {
   target: string;
@@ -67,6 +68,13 @@ const App = () => {
           Message from Container: <em>{messageFromContainer}</em>
         </p>
       )}
+      <MyComponent color="red" text="Hello from App 1" />
+      <MyCard
+        title="App 1 Card"
+        body="Stufff!"
+        action={() => alert("clicked!")}
+        buttonVariant="outlined"
+      />
     </Wrapper>
   );
 };
